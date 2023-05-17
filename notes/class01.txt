@@ -1,0 +1,57 @@
+
+get() vs navigate()
+-- navigate can move back, forward and refresh
+-- get() will wait for the page to fully load whereas navigate() will not
+-- get() will not keep the history of the browser whereas navigate() will
+
+close() vs quit()
+-- close() will close the current tab
+-- quit() will quit the whole browser
+
+fullscreen() vs maximize()
+-- maximize() will maximize the browser and you will still be able to see url, tabs, bookmarks
+    and fullscreen() will maximize the whole web application
+
+
+    What is a WebElement?
+    anything we see on the web page is considered to be a webelement
+    e.g. buttons, textboxes, checkboxes, links
+
+    HTML?
+    HyperText Markup Language
+
+    What is DOM?
+    DOM stands for Document Object Model. It is the browser's
+    internal view of the webpage.
+    Also called as Developer's tools, or Dev tools
+    Document --> can be stored any document as pdf, excel
+    Object --> any line in HTML is considered as Object
+    Model --> it is just a layout of the HTML
+
+    Locator
+    is an address or a position of an webelement on the web page
+    is used to locate or identify webelements on the webpage
+
+    8 Locators:
+    - ID
+    - Name
+    - Tagname
+    - xpath
+    - linktext
+    - partialLinkText
+    - CSS Selector
+    - ClassName
+
+
+    Why do we need many locators?
+    -- some locators might have duplicate values in other nodes
+    -- Developers may not provide all the locators for all the elements
+    -- some locators may not be applicable for the elements we are looking for
+        e.g. linkText and partialLinkText is only used for Links
+
+
+    there are some important things that you should remember while selecting a locator...
+
+    if a attribute value has a number in it , it is better to avoid it and use an alternative locator.!!!!!
+
+
