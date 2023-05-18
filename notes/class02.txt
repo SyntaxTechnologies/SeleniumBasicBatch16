@@ -1,0 +1,105 @@
+
+Linktext, partialLintext (they can only be used for <a> and it must also have some Text)
+
+
+"a" tag is also called an anchor tag, its for the link ...
+it must have a link and the text .. the text is going to be there almost everytime
+
+
+if 2 or more elements have same attributes and attribute values, Selenium will only interact with the
+first element it locates, we try to find elements as uniquely as possible
+
+
+there are some important things that you should remember while selecting a locator...
+
+if a attribute value has a number in it , it is better to avoid it and use an alternative locator.!!!!!
+
+
+
+differnce in linkText and partial link Text?
+
+a parital link text you can use just a part of text, just make sure that it is unqiue enough to stand out .
+
+
+-----WebElement Commands---
+.clear()
+.sendkeys()
+.getAttribute()
+.getText()
+-------------------
+
+1.Relative Xpath:
+
+	a.Syntax for xapth (finding by attribute):
+							//tagname[@attribute='attribute value']
+
+							translation:
+									hey get me the tagname , which has an 'attibute' whose value is "attribute value"
+
+
+                              *****   Example  ****
+
+								<input name ="abra" ,class ="fhdhfd"/>
+
+
+								task is to write down the xpath to get to this webElement:
+
+								//input[@name='abra']
+
+								translate:
+
+								hey get me the tag "input" which has an attribute name whose value is "abra";
+
+
+
+
+
+
+	b.Syntax for xpath (finding by text):
+									//tagname[text()='text value']
+
+
+									translation :
+										hey get me the tagname which has a text    "text value".
+
+									condition :
+										our html code (webelement) must have text.
+										****Example:****
+
+									<button id="tro", class="fyo"> heelo </button>
+									answer:
+										//button[text()='heelo']
+
+
+
+	c.Syntax for xpath (finding by contains method):
+
+							for tagname
+
+								//tagname[contains(@attribute, 'partial attribute value')]
+
+								translation :
+
+								get me the tag name which has an attibute whose value contains "partial value of the attribute"
+
+
+                                      ******Example**********
+                              <input email= "how are you i am fine , thankyou" id="dsfs"/>
+
+                               xpath using contains method:
+
+                                            //input[contains(@email,'how are you')]
+
+
+
+                               for text
+
+                                        //tagname[contains(text(), 'partial text value')]
+
+
+
+
+
+contains can be used in a scenario where
+1.the attribute or text is very long
+2.when part of the value or text is dynamic
