@@ -46,9 +46,5 @@ public class Locators {
 
         driver.findElement(By.partialLinkText("Recru")).click();
 
-
-
-
-
     }
 }
