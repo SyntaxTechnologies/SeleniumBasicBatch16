@@ -43,7 +43,7 @@ public class Locators {
         WebElement message = driver.findElement(By.linkText("Welcome Admin"));
         String text = message.getText();
         System.out.println(text);
-
+//click on the recruitment tab
         driver.findElement(By.partialLinkText("Recru")).click();
 
     }
