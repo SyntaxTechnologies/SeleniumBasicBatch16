@@ -1,0 +1,91 @@
+*****************Notes class 03************************
+
+Xpath:
+
+1. absolute xpath   --> starts with / and the root node (it is not widely used becuase the tree might 							change)
+2.Relative Xpath
+
+  a.Attribute
+      a.1   //tagname[@attribute='value']
+
+      Contains  methods in attribute
+      a.2   //tagname[contains(@attribute, 'partial attribute value')]
+
+      startsWith  method in attribute
+
+      a.3  //tagname[starts-with(@attribute, 'partial starting attribute value')]
+
+
+  b.Text
+      b.1   //tagname[text()="value"]
+
+       Contains  methods in attribute
+
+      b.2  //tagname[contains(text(), 'partial attribute value')]
+
+       startsWith  method in text
+
+       b.3 //tagname[starts-with(text(), 'partial starting attribute value')]
+
+
+ Notes:
+     1.if u are unable to write down the unqiue xpath (no matter u tried to use various avialable xpath)
+     then u can use
+        Indexing to select your desired one
+
+        	*  (//tagname[@attribute='value'])[index Number]    ---> Index number starts with 1
+
+     2.  use the contains or strats with only when
+          1. the text or attribute is  containing a dynamic  part  and u are left with no other option
+
+          2. the text or attribute is long enough (and you are sure that it will always remian unique)
+
+
+
+          ---------------------------------------------------------------------------------------
+          ---------------------------------------------------------------------------------------
+
+                                           CSS Selector
+
+
+Syntax:
+
+           tagname[attribute = 'attribute value']
+
+limitation : u cant use text with CSS selector
+
+
+Shortcuts are there in CSS selector that can be used to locate an element
+
+a.Shortcut for className --> "."
+			tagName[class='attribute value'] ----->tagName.attribute Value
+
+
+
+b.Shortcut for ID -- "#"
+           tagName[id='attribute value'] ----->tagName#attribute Value
+
+
+
+
+c.we have a contains method in CSS as well
+		*  represents contains
+		tagname[attribute *= 'partial attribute value']
+
+
+d. we have a starts with method in Css as well
+             ^ sign represents the starts with
+             tagname[attribute ^= 'starting attribute value']
+
+
+e. we have a ends with methods also in CSS
+
+        $ symbol represents ends-with method in css
+		tagname[attribute $= 'ending attribute value']
+
+
+
+FOCUS SHOULD BE ON :
+					 wiriting the locator that gets us the unqiue value
+					 also we should make sure at our end that the future changes
+					 will most probably not effect our xpath (try your best in this)
