@@ -1,0 +1,63 @@
+WebElement Commands:
+
+1.clear()
+2.getText()---> get the text
+3.getattribute()--> get the value of a particular attribute
+4. isselected()--> to check if the element is checked (clicked ) ir not
+5. isdisplayed() --> is it there on the screen or not
+6. isEnabled()  ---> is it clickable or are we able to send text to it incase of a text box
+
+
+ Approach to select the single checkbox:
+
+ Inspect the checkbox.
+ Write down the correct locator in the DOM.
+ Use findElement to find the checkbox.
+ Click on it.
+ If you want to check whether the checkbox is selected or not:
+
+ checkbox.isSelected(); // returns true if selected
+ Preferred approach for selecting multiple checkboxes:
+
+ Inspect them in the DOM.
+ Write the locator in such a way that it is able to select all the required checkboxes.
+ Use findElements to get all those checkboxes.
+ Iterate through the list.
+ While iterating, look for your desired checkbox (inspect the DOM to see which information provides you the indication that this is your desired checkbox).
+ Use an if statement to make the selection.
+ ..............................................Drop Down.....................................................
+
+ Drop Down:
+
+ Two types:
+
+ Single select
+ Multi-select
+ When it comes to drop-downs, we have a class in Selenium that helps us interact with them:
+
+ Select class - in order to be able to use this class, your dropdown must be made in the DOM using the SELECT tag.
+ Single Select Drop Down Approach:
+
+ Inspect the dropdown.
+ Check if it has the SELECT tag.
+ Write down the locator to find the WebElement dropdown.
+ Declare an object of the Select class (pass the WebElement in the parameters).
+ Use methods from the Select class to select the desired option:
+ selectByVisibleText();
+ selectByValue();
+ selectByIndex();
+
+ 
+ Multi-Select Drop Down Approach:
+
+ Inspect the dropdown.
+ Check if it has the SELECT tag.
+ Write down the locator to find the WebElement dropdown.
+ Declare an object of the Select class (pass the WebElement in the parameters).
+ Use methods to select the desired option:
+ selectByVisibleText();
+ selectByValue();
+ selectByIndex();
+ You can also use deselect methods in case of a multi-select dropdown.
+ To check if the dropdown is multi-select or not, you can use the isMultiple() method, which returns a boolean true if it is a multi-select dropdown.
+ N
