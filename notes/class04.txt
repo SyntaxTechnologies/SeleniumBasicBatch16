@@ -47,7 +47,7 @@ WebElement Commands:
  selectByValue();
  selectByIndex();
 
- 
+
  Multi-Select Drop Down Approach:
 
  Inspect the dropdown.
