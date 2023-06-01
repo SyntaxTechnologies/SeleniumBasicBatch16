@@ -1,0 +1,44 @@
+***************Implicit wait***************
+
+ Implicit wait:
+ it tells the webdriver to wait for a certain amount of time before throwing an exception
+ it will only be written once and will be applied to the whole session of the execution
+ We can say that implicit wait is a global wait
+
+ Implicit wait is usually set to 20 seconds. If your element is found in any time between the remaining
+ time, that time will be ignored and your script will move on to the next line or action
+
+ If the element is not found in a given time, ONLY then you will get an exception
+
+Syntax:
+driver.manage().timeouts().implicitlyWait(Duration.of.Seconds(20));
+
+
+
+********************Waits*********************
+
+
+wait for webElement to be found --> Implicit wait
+implicit wait --> global
+
+
+scearnio:
+webElement : <button id= "type"> button </button>
+appears in the DOM after 10 seconds
+
+
+
+
+======Explicit Wait------
+Explicit wait are conditonal wait
+it will wait till a certain condition is fulfiled or the timeout runs out
+
+rough syntax:
+wait.until.webElment to be displayed ()
+
+
+
+real syntax for Explicit wait:
+
+1. define the wait:   WebDriverWait wait = new WebDriverWait(driver, Duration.of.Seconds(20) );
+2. Conditon      :    wait.until(ExpectedConditions.elmenttobeVisible(By.xpath("")));
