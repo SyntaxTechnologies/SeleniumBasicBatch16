@@ -1,0 +1,278 @@
+********************Selenium review 01*************************
+
+
+What is selenium?
+selenium is a testing tool that help us automate websites, i,.e it allows us to test those websites.
+
+
+How are Websites made?
+using HTML code
+
+
+
+**usually all tags have a closing tag, but there are few which donot have a closing tag
+
+a)<input id='abc' class='pert' name='xyz'>
+
+
+b)<button id= "abc"> </button>
+
+or  this can also be written as
+
+c)<button id= "abc"/>they both mean the same thing
+
+
+d) <button id="ret">pressthebutton</button>
+the html tag has a text or not
+
+1.the text must be between opening and closing tag .  i.e must be between   <tagname>text</tagname>
+
+
+
+****************Locators*****************
+in order to deal with WebElements on a website, we need locators
+and selenium provides us with 8 locators.
+
+1. By id
+2. By className
+3. By Name
+4.By linktext        ------------------|  #must have a anchor tag
+5.By partiallintktext------------------|  #must have a text
+6.By tagName
+7.Xpath
+8.CSS
+
+
+
+<a> is called an anchor tag , it usally has all the links.
+
+
+Rules:
+1.must be unique
+2.Avoid the ones with numbers in them
+3.avoid the ones with spaces
+
+
+
+
+Scenario:
+
+that in the DOM there are 10 elments that start with tagname <button>
+
+
+     driver.findElement(By.tagname("button"));   ->the forst one that is encountered will be returned
+
+     driver.findElements(By.tagname("button"));---> it will return all of the elements in a form of list of
+     												WEbElements
+
+
+
+
+
+-------------------------------Xpath-------------------------------------
+
+1.)//tagName[@attribute='value']
+
+    contains method
+       //tagName[contains(@attribute,'value')]
+
+2.)//tagname[text()='value']
+	contains method
+       //tagName[contains(text(),'value')]
+
+
+3.)//tagname [starts-with(@attrinbute,'startingvalue of attrib')]
+   //tagname [starts-with(text(),'startingvalue of text')]
+
+
+ * last resort if after every try still xpath isnt unqiue enough
+  we can use indexing
+
+
+  to have oprators like and and or in our xpath conditions
+
+  //tagname[@attribute='value'  and @attribute='value']
+  //tagname[@attribute='value'  or  @attribute='value']
+
+example:
+//input[@value='Male' and @name='optradio']
+
+
+
+-------------------------------CSS-------------------------------------
+
+Css cant find an element using text
+
+1. tagname[attribute='value']
+2. shortcuts  --- >
+                    id #  -->  tagname#value
+            className  .  -->  tagname.value
+    *  represents contains -->tagname[attribute *= 'partial attribute value']
+
+	 we have a starts with method in Css as well
+             ^ sign represents the starts with
+             tagname[attribute ^= 'starting attribute value']
+
+     we have a ends with methods also in CSS
+
+        $ symbol represents ends-with method in css
+		tagname[attribute $= 'ending attribute value']
+
+
+
+
+---------------------Driver Commands------------
+
+
+driver.close()
+driver.quit()
+driver.get()
+driver.navigate().to()
+driver.findElements()
+driver.findElement()
+driver.manage().windows.maximize()
+
+driver.getTitle()
+driver.SwitchTo.
+driver.getCurrentURL()
+
+...
+....
+....
+....
+
+
+
+
+---------------------WebElement Commands------------
+
+click()
+sendKeys()
+clear()
+getText()
+getAttributeValue()
+isEnabled()
+isDisplayed()
+isSelected()
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+1.TextBox --> sendKeys(),clear(),isDisplayed(),isEnabled(),getAttributeValue()
+2.Button -->click(),isDisplayed(),isEnabled(),getAttributeValue()
+3.radioButtons-->click(),isDisplayed(),isEnabled(),getAttributeValue(),isSelected()
+4.checkBox  --->click(),isDisplayed(),isEnabled(),getAttributeValue(),isSelected()
+
+
+
+---------------------------DropDowns-------------------
+
+1.is there a select tag in your dropDOwn???
+if YES ---> use selenium Select class to deal with
+and
+if not---> then deal with it in a regular manner how u deal with other WebElement
+
+
+
+Approach:
+
+1.inspect and find the xpath for that dropDown
+2.create the instance of the Select class and pass in the parameters the WEbElement
+3.use any of the available methods to select ur desired value
+
+  a.By Index
+  b.By visible Text
+  c.By value
+
+single && multi
+
+there is no difference in dealing with both,apart from the fact
+that
+
+we can use deselect methods with the multiselect dropdown
+
+
+----------------------------SwitchToCommands----------------
+
+Alerts:
+html  -> deal with them how we deal with regular webElements
+windows -->no we cant deal with them
+javascript--> switchTO
+
+
+
+Note:
+when ever there is an alert
+the control is taken off from the main page
+
+
+Approach:
+1.  switch the focus and use methods from alert class
+
+   driver.switchTo.alert()---> switch thefocus
+
+   accept()
+   dismiss()
+   sendKeys()
+
+
+--------Frames--------
+
+
+
+ways to swtich the focus
+
+to an iframe
+
+1. by index
+2. by ID or Name
+3. By webElement -- find the WebElement first and then pass that webElement in the argument of
+					driver.switchTo.frame(WebElement)
+
+
+
+
+
+-------windowHandles---------
+
+driver.getwindowHandle()--> returns current page window handle
+driver.getwindowHandles() --> returns a set of all windows handles that are opened up
+
+dirver.switchTo.window(handle)
+
+
+
+
+
+---------------------------------------
+waits
+--------------------------------------
+Why waits over thread.sleep???
+thread.sleep forces to wait for specified time
+    if element is found earlier it will still wait
+    that is a problem
+    we dont exactly know how much time it will be taking for element to be found
+
+--implicit:
+it is a global wait
+
+
+implicit wait is going to wait until the WebElement is found
+we just have to define them in the start
+that is it.
+
+
+driver.manage().timeouts().implicitlyWait(Duration.of.Seconds(20));
+
+
+
+
+
+
+
+
+
+
+
