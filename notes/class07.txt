@@ -1,0 +1,21 @@
+WebTables:
+Webtables are elements on the webpage, which are constructed by having
+rows and columns
+
+Types of webtables:
+1. Static webtables
+2. dynamic webtables
+
+WebTables consist of defferent sections or parts:
+<table>
+        <thead>
+                <tr>
+                    <th></th> --> column data or heading
+                </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td></td> --> table data
+                </tr>
+        </tbody>
+</table>
