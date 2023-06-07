@@ -23,13 +23,16 @@ public class tables extends CommonMethods {
         System.out.println("********************************************************");
 //****************row level access of table*************
 //        print all the rows of the table
-
+//modified: print the row that contains google as company name
         List<WebElement> allRows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr"));
         for(WebElement row:allRows){
             String rowText = row.getText();
-            System.out.println(rowText);
+            if(rowText.contains("Google")) {
+                System.out.println(rowText);
+            }
 
         }
+
 
         System.out.println("--------------------------------------------------------");
 //*****************column level access************************
