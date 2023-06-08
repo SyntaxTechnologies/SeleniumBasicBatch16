@@ -1,0 +1,51 @@
+
+Tables divided into several pages, the navigation bar is called PAGINATION
+
+Calendars:
+are also known as date-pickers
+
+
+
+How to handle Calendars:
+1. click on the calendar
+2. locate the month and get the text
+3. if the desired text is not visible --> we will keep clicking on next and keep updating text
+4. as soon as we found our desired month --> grab all cells from the table
+5. Loop through the cells
+6. once the cell value is matched with our condition --> click on the matched date
+
+Advanced Xpath
+is based on parent and child, sibling relationships
+
+identifying elements by following sibling
+//tagname[@attribute = 'attribute value']/following-sibling::tagname
+
+//input[@id = 'calFromDate']/following-sibling::img
+
+identifying elements by preceding sibling
+//tagname[@attribute = 'attribute value']/preceding-sibling::tagname
+
+//span[text() = '& Orders']/preceding-sibling::span
+
+identifying element parents
+//tagname[@attribute = 'attribute value']/parent::parentTagname
+
+//span[text() = '& Orders']/parent::a
+
+identifying element ancestors
+//tagname[@attribute = 'attribute value']/ancestor::ancestorTagname
+
+//input[@id = 'email']/ancestor::form
+
+identifying element by index
+(//img[@class = 'ui-datepicker-trigger'])[2]
+
+
+
+OR
+
+XPath=//tagname[@attribute1=value1 OR @attribute2=value1]
+
+AND
+
+XPath=//tagname[@attribute1=value1 AND @attribute2=value1]
