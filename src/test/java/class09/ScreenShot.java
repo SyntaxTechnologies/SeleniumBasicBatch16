@@ -33,3 +33,8 @@ public class ScreenShot extends CommonMethods {
         FileUtils.copyFile(screenShot,new File("C:\\Users\\moazzam\\Desktop\\syntaxHRMS\\syntaxSdetBatch16Basic\\screenshot\\testSyntax1.png"));
     }
 }
+
+
+//HW:
+//create a method in Common methods for screen shot
+//it should take file name as a parameter.
